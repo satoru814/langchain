@@ -33,10 +33,13 @@ class GoogleApiClient:
             )
 
     """
-
-    credentials_path: Path = Path.home() / ".credentials" / "credentials.json"
-    service_account_path: Path = Path.home() / ".credentials" / "credentials.json"
-    token_path: Path = Path.home() / ".credentials" / "token.json"
+    def __init__(self, credentials_path, service_account_path, token_path):
+        self.credentials_path = credentials_path
+        self.service_account_path = service_account_path
+        self.token_path = token_path
+        # credentials_path: Path = Path.home() / ".credentials" / "credentials.json"
+        # service_account_path: Path = Path.home() / ".credentials" / "credentials.json"
+        # token_path: Path = Path.home() / ".credentials" / "token.json"
 
     def __post_init__(self) -> None:
         self.creds = self._load_credentials()
