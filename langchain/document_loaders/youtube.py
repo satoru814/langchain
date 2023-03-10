@@ -41,12 +41,12 @@ class GoogleApiClient:
         self.credentials_path = credentials_path
         self.service_account_path = service_account_path
         self.token_path = token_path
+        self.creds = self._load_credentials()
         # credentials_path: Path = Path.home() / ".credentials" / "credentials.json"
         # service_account_path: Path = Path.home() / ".credentials" / "credentials.json"
         # token_path: Path = Path.home() / ".credentials" / "token.json"
 
-    def __post_init__(self) -> None:
-        self.creds = self._load_credentials()
+    # def __post_init__(self) -> None:
 
     @root_validator
     def validate_channel_or_videoIds_is_set(
@@ -74,7 +74,7 @@ class GoogleApiClient:
                 "You must run"
                 "`pip install --upgrade "
                 "google-api-python-client google-auth-httplib2 "
-                "google-auth-oauthlib"
+                "google-auth-oauthlib "
                 "youtube-transcript-api`"
                 "to use the Google Drive loader"
             )
