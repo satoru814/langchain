@@ -79,7 +79,8 @@ class GoogleApiClient:
                 "to use the Google Drive loader"
             )
 
-        # creds = None
+        creds = None
+        print(self.service_account_path)
         if self.service_account_path.exists():
             return service_account.Credentials.from_service_account_file(
                 str(self.service_account_path)
