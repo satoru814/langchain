@@ -34,8 +34,8 @@ class GoogleApiClient:
 
     """
     def __init__(self, 
+                 service_account_path: Path,
                  credentials_path: Path = Path.home() / ".credentials" / "credentials.json",
-                 service_account_path: Path = Path.home() / ".credentials" / "credentials.json",
                  token_path: Path = Path.home() / ".credentials" / "token.json"):
                  
         self.credentials_path = credentials_path
